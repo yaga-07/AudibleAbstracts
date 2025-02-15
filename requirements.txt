@@ -1,0 +1,12 @@
+numpy
+scipy
+torch
+transformers
+pydantic
+termcolor
+pypdf
+langchain_community
+openai
+huggingface_hub
+python-dotenv
+git+https://github.com/huggingface/parler-tts.git
