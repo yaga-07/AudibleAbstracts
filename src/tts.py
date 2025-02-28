@@ -46,7 +46,7 @@ class MultiTurnParlerTTS():
     def generate_audio(self, text: List[Dict[str, str]]):
       final_audio = []
       for turn in text:
-        speaker_description_input_ids = self.speaker_ids[turn['role']]['description_input_ids']
+        speaker_description_input_ids = self.speaker_ids[turn['role'].lower()]['description_input_ids']
         speaker_prompt_input_ids = self.tokenizer(preprocess(turn['content']), return_tensors="pt").to(self.device)
         generation = self.model.generate(
             input_ids=speaker_description_input_ids.input_ids, prompt_input_ids=speaker_prompt_input_ids.input_ids,
